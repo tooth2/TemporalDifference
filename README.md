@@ -1,2 +1,2 @@
-# TemporalDistance
-Python Implementation for Temporal Distance methods 
+# Temporal Difference 
+Python Implementation for Temporal Difference methods 
