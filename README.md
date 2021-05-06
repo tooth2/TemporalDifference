@@ -25,13 +25,17 @@ In this CliffWalking environment, the agent navigates a 4x12 gridworld.
 ```
 
 ## Project Background
-Compare to Monte Carlo (MC) prediction methods, MC must wait until the end of an episode to update the value function estimate, whereas, temporal-difference (TD) methods update the value function after every time step.
+Temporal Difference(TD) is a combination of Monte Carlo and Dynamic Programming ideas. Like Monte Carlo, TD works based on samples and doesn't require a model of the environment. Like Dynamic Programming, TD uses bootstrapping to make updates. However, Monte Carlo (MC) prediction methods must wait until the end of an episode to update the value function estimate, whereas, temporal-difference (TD) methods update the value function after every time step.
+
+> General Update Rule: Q[s,a] += learning_rate * (td_target - Q[s,a]). td_target - Q[s,a]
 
 1. TD Control: Sarsa 
 Sarsa(0) (or Sarsa) is an on-policy TD control method. It is guaranteed to converge to the optimal action-value function q∗, as long as the step-size parameter α is sufficiently small and ϵ is chosen to satisfy the Greedy in the Limit with Infinite Exploration (GLIE) conditions.
+> TD Target for SARSA: R[t+1] + discount_factor * Q[next_state][next_action] 
 
 2. TD Control: Q-learning
 Sarsamax (or Q-Learning) is an off-policy TD control method. It is guaranteed to converge to the optimal action value function q∗, under the same conditions that guarantee convergence of the Sarsa control algorithm.
+> TD Target for Q-Learning: R[t+1] + discount_factor * max(Q[next_state])
 
 3. TD Control: Expected Sarsa
 Expected Sarsa is an on-policy TD control method. It is guaranteed to converge to the optimal action value function q∗, under the same conditions that guarantee convergence of Sarsa and Sarsamax.
