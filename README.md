@@ -8,6 +8,7 @@ A Python Implementation for various Temporal Difference methods
 
 ## Project Environment 
 0. Environment :  [CliffWalkingEnv](https://github.com/openai/gym/blob/master/gym/envs/toy_text/cliffwalking.py)
+In this CliffWalking environment, the agent navigates a 4x12 gridworld.
    ```
     This is a simple implementation of the Gridworld Cliff
     reinforcement learning task.
@@ -53,3 +54,4 @@ Expected Sarsa generally achieves better performance than Sarsa.
 ### Reference 
 * [OpenAI Gym](https://github.com/openai/gym/blob/master/gym/envs/toy_text/cliffwalking.py)
 * [Cliff Walking](https://github.com/dennybritz/reinforcement-learning/blob/master/lib/envs/cliff_walking.py)
+* Richard & Barto's [Reinforcement Learning:An Introduction](https://web.stanford.edu/class/psych209/Readings/SuttonBartoIPRLBook2ndEd.pdf)
