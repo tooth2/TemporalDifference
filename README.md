@@ -9,7 +9,7 @@ A Python Implementation for various Temporal Difference methods
 ## Project Environment 
 0. Environment :  [CliffWalkingEnv](https://github.com/openai/gym/blob/master/gym/envs/toy_text/cliffwalking.py)
 In this CliffWalking environment, the agent navigates a 4x12 gridworld.
-   ```
+```
     This is a simple implementation of the Gridworld Cliff
     reinforcement learning task.
     Adapted from Example 6.6 from Reinforcement Learning: An Introduction
@@ -22,8 +22,7 @@ In this CliffWalking environment, the agent navigates a 4x12 gridworld.
         [3, 1..10] as the cliff at bottom-center
     Each time step incurs -1 reward, and stepping into the cliff incurs -100 reward 
     and a reset to the start. An episode terminates when the agent reaches the goal.    
-    ```
-
+```
 
 ## Project Background
 Compare to Monte Carlo (MC) prediction methods, MC must wait until the end of an episode to update the value function estimate, whereas, temporal-difference (TD) methods update the value function after every time step.
@@ -50,6 +49,9 @@ The algorithm returns as output:
 ## Analysis/Result
 On-policy TD control methods (like Expected Sarsa and Sarsa) have better online performance than off-policy TD control methods (like Q-learning).
 Expected Sarsa generally achieves better performance than Sarsa.
+|Cliff-walking task|result|
+|--|--|
+|![Task](task.png)|![Result](performance.png)|
 
 ### Reference 
 * [OpenAI Gym](https://github.com/openai/gym/blob/master/gym/envs/toy_text/cliffwalking.py)
