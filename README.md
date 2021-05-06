@@ -51,12 +51,19 @@ The algorithm returns as output:
 * Q: This is a dictionary (of one-dimensional arrays) where Q[s][a] is the estimated action value corresponding to state s and action a.
 
 ## Analysis/Result
-On-policy TD control methods (like Expected Sarsa and Sarsa) have better online performance than off-policy TD control methods (like Q-learning).
-Expected Sarsa generally achieves better performance than Sarsa.
+1. All of the TD control methods (Sarsa, Sarsamax, Expected Sarsa) converge to the optimal action-value function q∗ (and so yield the optimal policy π∗) if:
+- the value of ϵ decays in accordance with the GLIE conditions, and
+- the step-size parameter α is sufficiently small.
+
+2. Sarsa and Expected Sarsa are both on-policy TD control algorithms. In this case, the same (ϵ-greedy) policy that is evaluated and improved is also used to select actions.
+3. Q-Learning(Sarsamax) is an off-policy method, where the (greedy) policy that is evaluated and improved is different from the (ϵ-greedy) policy that is used to select actions.
+4. On-policy TD control methods (like Expected Sarsa and Sarsa) have better online performance than off-policy TD control methods (like Q-learning aks Sarsamax).
+5. Expected Sarsa generally achieves better performance than Sarsa.
 |Cliff-walking task|result|
 |--|--|
 |![Task](task.png)|![Result](performance.png)|
-
+* Q-learning achieves worse online performance (where the agent collects less reward on average in each episode), but learns the optimal policy, and
+* Sarsa achieves better online performance, but learns a sub-optimal "safe" policy.
 ### Reference 
 * [OpenAI Gym](https://github.com/openai/gym/blob/master/gym/envs/toy_text/cliffwalking.py)
 * [Cliff Walking](https://github.com/dennybritz/reinforcement-learning/blob/master/lib/envs/cliff_walking.py)
