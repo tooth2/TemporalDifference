@@ -8,7 +8,7 @@ Therefore, the only way to succeed is to drive back and forth to build up moment
 
 - Environment details
 MountainCar-v0 defines "solving" as getting average reward of -110.0 over 100 consecutive trials.
-This problem was first described by Andrew Moore in his PhD thesis [Andrew Moore](https://www.cl.cam.ac.uk/techreports/UCAM-CL-TR-209.pdf)
+This problem was first described by Andrew Moore in his PhD thesis [Efficient memory-based learning for robot control](https://www.cl.cam.ac.uk/techreports/UCAM-CL-TR-209.pdf)
 
 2. MountainCarContinuous-v0
 Same task with MountainCar-v0 Here, Here, this is the continuous version and the reward is greater if you spend less energy to reach the goal
