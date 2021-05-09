@@ -1,6 +1,6 @@
 # Continuous Space 
 
-## Background 
+## Background - the Mountain Car environment
 1. MountainCar-v0
 A car is on a one-dimensional track, positioned between two "mountains". The goal is to drive up the mountain on the right; 
 however, the car's engine is not strong enough to scale the mountain in a single pass. 
@@ -17,12 +17,14 @@ Same task with MountainCar-v0 Here, Here, this is the continuous version and the
 MountainCarContinuous-v0 defines "solving" as getting average reward of 90.0 over 100 consecutive trials.
 
 ## Discretization
-- discretize continuous state spaces
-- use tabular solution methods to solve complex tasks
-- the Mountain Car environment
+- discretize continuous state spaces using a uniformly-spaced grid (tabular solution methods)
+- to create such a grid, given the lower bounds (low), upper bounds (high), and number of desired bins along each dimension
+- return the split points for each dimension, which will be 1 less than the number of bins
 
 ## Tile-Coding
-- a method for discretizing continuous state spaces that enables better generalization
+- a method for discretizing continuous state spaces that enables better generalization compared to a single grid-based approach
+- create several overlapping grids or tilings; then for any given sample value, only check which tiles it lies in
+- encode the original continuous value by a vector of integer indices or bits that identifies each activated tile
 
 ## Reference 
 - 1990, Andrew Moore Dissertation[Efficient memory-based learning for robot control](https://www.cl.cam.ac.uk/techreports/UCAM-CL-TR-209.pdf)
